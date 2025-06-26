@@ -81,6 +81,8 @@ Vercel → Storage → Supabase → Open in Supabase → Restore project で再�
 
 フォームの送信やボタン操作に伴う処理をサーバーで直接実行できる仕組み。`use server`を使う。いわば「従来のWebサイトで当たり前だったサーバー処理を、モダンなReact環境でシンプルに扱えるようにした仕組み」。
 
+サーバーサイドでの`fetch`はデータの読み取り、サーバーアクションは書き込み。
+
 ## Zod
 
 Zodは、TypeScriptやJavaScriptでスキーマを定義し、データのバリデーションを行うためのライブラリです。

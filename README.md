@@ -86,3 +86,32 @@ Vercel → Storage → Supabase → Open in Supabase → Restore project で再�
 ## Zod
 
 Zodは、TypeScriptやJavaScriptでスキーマを定義し、データのバリデーションを行うためのライブラリです。
+
+## errorsでまとる
+
+app/lib/actions.ts
+```
+export type State = {
+  errors?: {
+    customerId?: string[];
+    amount?: string[];
+    status?: string[];
+  };
+  message?: string | null;
+};
+```
+フォームの1つ1つの項目をerrorsでまとめておいて、各項目に対してエラー用のHTMLを用意しておいてエラーがあれば表示するという方法でバリデーションが実装できる。
+
+## metaのテンプレートが素晴らしい
+
+templateで下層ページ向けの型を作ることができる。
+defaultで
+
+```
+export const metadata: Metadata = {
+  title: {
+    template: '%s | Acme Dashboard',
+    default: 'Acme Dashboard',
+  },
+};
+```
